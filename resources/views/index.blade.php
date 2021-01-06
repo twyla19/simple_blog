@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - GO BLOG</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,12 +20,104 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/">BERANDA</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/">TENTANG KAMI</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/">KONTAK</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/">LOGIN</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/" data-toggle="modal" data-target="#myModal">LOGIN</a></li>
                 </ul>
         </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image:url('/img/home-bg.jpg');">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <label for="">LOGIN/REGISTRASI</label>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a href="#Login" class="nav-link active" data-toggle="tab">Login</a></li>
+                            <li class="nav-item"><a href="#Registration" class="nav-link" data-toggle="tab">Registrasi</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password1" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary">
+                                            MASUK</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">
+                                        Username</label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" placeholder="Username" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="password1" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password2" class="col-sm">
+                                        Konfirmasi Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password2" placeholder="Konfirmasi Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary btn-sm">
+                                            DAFTAR</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <header class="masthead" style="background-image:url('images/home-bg.jpg');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -85,7 +177,8 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/clean-blog.js"></script>
+    <script src="js/effect-blog.js"></script>
+    <script src="js/modal-login.js"></script>
 </body>
 
 </html>
