@@ -4,13 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Laravel SB Admin 2">
-    <meta name="author" content="Alejandro RH">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BLOG') }}</title>
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -30,7 +28,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -39,33 +37,21 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            {{ __('Settings') }}
-        </div>
-
         <!-- Nav Item - Profile -->
-        <li class="nav-item">
-            <a class="nav-link"">
+        <!-- <li class="nav-item">
+            <a class="nav-link">
                 <i class="fas fa-fw fa-user"></i>
                 <span>{{ __('Profile') }}</span>
             </a>
-        </li>
+        </li> -->
 
         <!-- Nav Item - About -->
         <li class="nav-item">
             <a class="nav-link">
                 <i class="fas fa-fw fa-hands-helping"></i>
-                <span>{{ __('About') }}</span>
+                <span>{{ __('Tabel') }}</span>
             </a>
         </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -134,9 +120,9 @@
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="{{ route('profile') }}">
+                            <!-- <a class="dropdown-item" href="{{ route('profile') }}">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                {{ __('Profile') }}
+                                {{ __('Profile') }} -->
                             <!-- </a>
                             <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -146,7 +132,6 @@
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Activity Log') }}
                             </a> -->
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Logout') }}
@@ -205,6 +190,28 @@
                 <button class="btn btn-link" type="button" data-dismiss="modal">{{ __('Cancel') }}</button>
                 <a class="btn btn-danger" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                 <form id="logout-form" action="" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{ __('DELETE USER') }}</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Are you sure you want to delete "nama lengkap"?</div>
+            <div class="modal-footer">
+                <button class="btn btn-link" type="button" data-dismiss="modal">{{ __('Cancel') }}</button>
+                <a class="btn btn-danger" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Delete') }}</a>
+                <form id="delete-form" action="" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>

@@ -15,21 +15,22 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'ProfileController@index')->name('profile');
+Route::get('/admin', 'ProfileController@index')->name('list');
+Route::get('/editprofile', 'ProfileController@profile')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('profil', function () {
-    return view('admin-profile');
-});
+// Route::get('profil', function () {
+//     return view('admin-profile');
+// });
